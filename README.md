@@ -22,10 +22,6 @@
 
 ## TODO:
 
-- Remove old commands already commented
-
 - Comment more the basic files
 
 - Add more packages
-
-- Change file name in docker-compose.yml

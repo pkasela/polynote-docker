@@ -1,5 +1,5 @@
 FROM ubuntu
-MAINTAINER pranav.kasela@gmail.com
+MAINTAINER pkasela
 
 ENV SPARK_VER=2.4.4
 ENV HADOOP_VER=2.6
@@ -20,15 +20,12 @@ RUN wget https://archive.apache.org/dist/spark/spark-${SPARK_VER}/spark-${SPARK_
 RUN tar -xvf spark-${SPARK_VER}-bin-hadoop${HADOOP_VER}.tgz
 RUN mv spark-${SPARK_VER}-bin-hadoop${HADOOP_VER} /opt/spark
 
-RUN echo "yeah"
-
 ENV SPARK_HOME=/opt/spark
 ENV PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
 ENV PYSPARK_ALLOW_INSECURE_GATEWAY=1
  
 RUN wget https://github.com/polynote/polynote/releases/download/${POLYNOTE_VER}/polynote-dist.tar.gz | bash
 RUN tar -zxvpf polynote-dist.tar.gz
-#RUN mv polynote-dist polynote
 
 EXPOSE 8192
 EXPOSE 4040

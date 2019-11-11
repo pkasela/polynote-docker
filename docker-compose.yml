@@ -1,7 +1,7 @@
 version: '3'
 services:
   polynote:
-    image: polynote:latest
+    image: pkasela/polynote:latest
     container_name: polynote
     ports:
       - 8192:8192
@@ -9,7 +9,3 @@ services:
       - 8888:8888
     volumes:
       - ./mynotebooks/:/polynote/notebooks/notebook_ext
-    #environment:
-    #  GRANT_SUDO: 'yes'
-    #  ENABLE_HTTPS: 'false'
-    #user: "root"
